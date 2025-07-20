@@ -17,12 +17,34 @@ services:
   app:
     build: 
       context: .
-      dockerfile: public/php/Dockerfile
+      dockerfile: Dockerfile
     container_name: php
-    volumes:
-      - .:/var/www/html/todo
     networks:
       - todo-network
+    environment:
+      DB_HOST: <writer_ip_of_db_server>
+      DB_CONNECTION: mysql
+      DB_PORT: 3306
+      DB_DATABASE: todoapp
+      DB_USERNAME: homestead
+      DB_PASSWORD: todoapp786@
+    # depends_on:
+    #   - db
+    command: bash -c "php artisan key:generate && php artisan optimize && php artisan migrate && php-fpm"
+
+  # unhash and above depends_on this if you want to use mysql container in same server 
+  
+  # db:
+  #   image: mysql:5.7
+  #   environment:
+  #     MYSQL_DATABASE: todoapp
+  #     MYSQL_USER: homestead
+  #     MYSQL_PASSWORD: todoapp786@
+  #     MYSQL_ROOT_PASSWORD: root
+  #   ports:
+  #     - "3306:3306"
+  #   networks:
+  #     - todo-network
 
 networks:
   todo-network:

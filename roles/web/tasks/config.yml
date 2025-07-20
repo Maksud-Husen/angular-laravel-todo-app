@@ -1,0 +1,16 @@
+---
+- name: Copy the project files
+  copy:
+    src: /home/maksud-husen/Work&Test/ansible_study/angular-laravel-todo-app/
+    dest: /var/www/todoapp/
+    owner: www-data
+    group: www-data
+    mode: '0755'
+ 
+# - name: create the config file
+#   copy:
+#     src: /home/maksud-husen/Work&Test/ansible_study/angular-laravel-todo-app/public/Docker/todoapp.conf
+#     dest: /etc/nginx/conf.d/todoapp.conf
+#     owner: root
+#     group: root
+#     mode: '0644'

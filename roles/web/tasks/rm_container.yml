@@ -1,0 +1,13 @@
+---
+- name: Stop all running containers
+  shell: docker stop $(docker ps -aq)
+  ignore_errors: yes
+
+
+- name: Removing old containers
+  shell: docker rm -f $(docker ps -aq)
+  ignore_errors: yes
+
+- name: Removing old images
+  shell: docker rmi -f $(docker images -aq) || true
+  ignore_errors: yes

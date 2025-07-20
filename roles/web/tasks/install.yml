@@ -1,0 +1,24 @@
+---
+- name: Gather installed package facts
+  package_facts:
+    manager: auto
+
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+  when: "'nginx' not in ansible_facts.packages"
+
+- name: Install Docker and Docker Compose
+  apt:
+    name:
+      - docker.io
+      - docker-compose
+    state: present
+  when: "'docker.io' not in ansible_facts.packages and 'docker-compose' not in ansible_facts.packages"
+
+- name: Start and enable Nginx
+  service:
+    name: nginx
+    state: started
+    enabled: true

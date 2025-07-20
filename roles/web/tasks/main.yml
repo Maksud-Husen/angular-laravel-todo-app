@@ -1,0 +1,7 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for web/
+- import_tasks: rm_container.yml
+- import_tasks: install.yml
+- import_tasks: config.yml
+- import_tasks: service.yml

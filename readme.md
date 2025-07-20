@@ -21,3 +21,6 @@ Laravel is a back-end framework created for php. This allows us to better build 
 2. Run 'php artisan key:generate'
 3. Type the command: 'php artisan migrate' to create a database table from Eloquent models. Make sure you check the .env file for your local mysql db setup.
 4. Run the app by typing the command: 'php artisan serve'
+
+## If you want to do it with ansible 
+READ - readme_ansible.md file

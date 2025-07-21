@@ -1,14 +1,13 @@
 ---
-- name: reload nginx
-  service:
-    name: nginx
-    state: reloaded     
-
-    
 - name: Start docker compose
   command: docker-compose -f /var/www/todoapp/docker-compose.yml up -d
   args:
     chdir: /var/www/todoapp/
+
+- name: Reload nginx
+  service:
+    name: nginx
+    state: reloaded   
 
 - name: Ensure docker containers are running
   command: docker ps -a

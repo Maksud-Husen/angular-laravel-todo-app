@@ -28,9 +28,11 @@ pipeline {
             steps {
                 echo "Running ansible playbook"
                 script {
-                    sh '''
-                        cd angular-laravel-todo-app &&
-                        ansible-playbook -i inventory.ini state.yml
+                    sh '''cd angular-laravel-todo-app
+                    echo "Contents of repo:"
+                    ls -la
+                    echo "Running playbook..."
+                    ansible-playbook -i inventory.ini state.yml
                     '''
                 }
             }

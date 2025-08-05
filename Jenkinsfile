@@ -7,10 +7,7 @@ pipeline {
                 echo "Removing old project if exists"
                 script {
                     sh '''
-                        if [ -d "angular-laravel-todo-app" ]; then
-                            rm -rf angular-laravel-todo-app
-                        fi
-                    '''
+                        rm -rf angular-laravel-todo-app'''
                 }
             }
         }

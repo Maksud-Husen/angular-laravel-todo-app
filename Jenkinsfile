@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo "Cloning project"
                 script {
-                    sh 'git clone https://github.com/Maksud-Husen/angular-laravel-todo-app.git'
+                    sh 'git clone -b with-ansible https://github.com/Maksud-Husen/angular-laravel-todo-app.git'
                 }
             }
         }

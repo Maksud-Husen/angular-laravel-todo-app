@@ -1,27 +1,27 @@
----
-- name: Create database 
-  mysql_db:
-    name: todoapp
-    state: present
+# ---
+# - name: Create database 
+#   mysql_db:
+#     name: todoapp
+#     state: present
     
-- name: create user
-  mysql_user:
-    name: homestead
-    password: todoapp786@
-    host: <write your app server IP here>
-    priv: 'todoapp.*:ALL'
-    state: present
+# - name: create user
+#   mysql_user:
+#     name: homestead
+#     password: todoapp786@
+#     host: <write your app server IP here>
+#     priv: 'todoapp.*:ALL'
+#     state: present
 
-- name: firewall rule to allow app server to connect to db server
-  community.general.ufw:
-    rule: allow
-    port: 3306
-    proto: tcp
-    from_ip: <write your app server IP here>
+# - name: firewall rule to allow app server to connect to db server
+#   community.general.ufw:
+#     rule: allow
+#     port: 3306
+#     proto: tcp
+#     from_ip: <write your app server IP here>
   
-- name: restart mysql service
-  service:
-    name: mysql
-    state: restarted 
+# - name: restart mysql service
+#   service:
+#     name: mysql
+#     state: restarted 
 
 

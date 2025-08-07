@@ -1,7 +1,7 @@
 ---
 - name: Copy the project files
   copy:
-    src: /var/lib/jenkins/workspace/ansible-todo/angular-laravel-todo-app                                                #/var/lib/jenkins/workspace/ansible-todo/angular-laravel-todo-app #this is for jenkins      and this for if not using jenkins      #/home/maksud-husen/Work&Test/ansible_study/angular-laravel-todo-app/      
+    src: /var/lib/jenkins/workspace/ansible-with-todo/angular-laravel-todo-app                                                #/var/lib/jenkins/workspace/ansible-todo/angular-laravel-todo-app #this is for jenkins      and this for if not using jenkins      #/home/maksud-husen/Work&Test/ansible_study/angular-laravel-todo-app/      
     dest: /var/www/todoapp/
     owner: www-data
     group: www-data
